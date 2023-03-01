@@ -1,0 +1,27 @@
+<!--
+ * @Author: alexthezhang228 zhangy32@tcd.ie
+ * @Date: 2023-02-19 17:30:13
+ * @LastEditors: alexthezhang228 zhangy32@tcd.ie
+ * @LastEditTime: 2023-02-24 23:49:36
+ * @FilePath: /flask_project/template/login.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+{% extends 'base.html' %}
+
+{% block body %}
+<form method="POST">
+  
+    <div class="mb-3 w-75 p-3 ">
+      <label for="formGroupExampleInput1" class="form-label">EMAIL</label>
+      <input type="text" class="form-control" id="formGroupExampleInput1" name="email">
+    </div>
+    <div class="mb-3 w-75 p-3 ">
+      <label for="formGroupExampleInput2" class="form-label">PASSWORD</label>
+      <input type="password" class="form-control" id="formGroupExampleInput2" name="password">
+    </div>
+    <button type="submit" class="btn bg-secondary">
+      Log In Now!!
+    </button>
+  
+</form>
+{% endblock %}

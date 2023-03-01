@@ -1,0 +1,104 @@
+/*
+ * @Author: alexthezhang228 zhangy32@tcd.ie
+ * @Date: 2023-02-19 18:53:50
+ * @LastEditors: alexthezhang228 zhangy32@tcd.ie
+ * @LastEditTime: 2023-02-28 21:53:02
+ * @FilePath: /flask_project/static/styles.css
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+body{
+  margin: 0;
+}
+.navgation_bar{
+  background-color: gainsboro;
+  display: flex;
+  border: 1px black solid;
+}
+.navgation_bar>.nav_left{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.navgation_bar>.nav_left>div{
+  margin: 10px;
+}
+.navgation_bar>.nav_right{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.navgation_bar>.nav_right>div{
+  margin-top: 12px;
+  padding-left: 10%;
+}
+.register_form{
+  width: 30%;
+  position: relative;
+  left: 35%;
+}
+
+#getCode{
+  margin-top: 10px;
+}
+
+.row{
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
+  bottom:20%;
+}
+
+.row>.col-10{
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.row>.col-10>form>.form-group{
+  margin-top: 10px;
+}
+
+textarea{
+  height: 200px;
+}
+
+
+li{
+  list-style: none;
+}
+.question-li{
+  display: flex;
+  width: 700px;
+  height: 120px;
+  border: 1px springgreen solid;
+}
+.side-question-avatar{
+  width: 80%;
+  height: 80%;
+  padding-top: 10%;
+}
+
+
+.question-li>.question-word{
+  color: wheat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.question-li>.question-word>.question-main{
+  width: 600px;
+  margin-top: 10px;
+}
+
+.question-word>.question-detail{
+  padding-bottom:10px;
+}

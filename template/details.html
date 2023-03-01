@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title%}{{question.title}}{% endblock %}
+{% block head %} 
+<link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/detail.css')}}">
+{% endblock %}
+{% block body %}
+
+<h3 clas="page-title">{{question.title}}</h3>
+<p class="question-info">
+  <span>author:{{question.author.username}}</span>
+  <span>time:{{question.create_time}}</span>
+</p>
+<hr></hr>
+<p class="question-content">{{question.content}}</p>
+<hr></hr>
+<h4 class="comment-group-title">
+  review(2):
+</h4>
+
+
+<form action="{{url_for('qa.public_answer')}}" method="post">
+  <div class="comment-group">
+    <input type="text" placeholder="please leave your comment" name="content" class="form-control">
+    <input type="text" name="question_id" value="{{question.id}}">
+    <span>{{question.id}}</span>
+  </div>
+  <div class="form-group" style="text-align: right;">
+    <button class="btn btn-primary">submit</button> 
+  </div>
+</form>
+<ul class="comment-group">
+  <li>
+    <div class="user-info">
+      <img class="avater" src="{{url_for('static',filename='images/avatar.jpeg')}}" >
+      <span class="user-name">alex</span>
+      <span class="create-time">1 MARCH 2023</span>
+    </div>
+
+  </li>
+</ul>
+{% endblock %}
