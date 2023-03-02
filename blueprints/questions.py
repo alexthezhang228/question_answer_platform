@@ -1,8 +1,8 @@
 '''
 Author: alexthezhang228 zhangy32@tcd.ie
 Date: 2023-02-19 12:16:43
-LastEditors: alexthezhang228 zhangy32@tcd.ie
-LastEditTime: 2023-03-01 23:55:33
+LastEditors: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
+LastEditTime: 2023-03-02 23:25:52
 FilePath: /flask_project/blueprints/questions.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
@@ -66,3 +66,11 @@ def public_answer():
         return redirect(url_for('qa.qa_detail', qa_id=question_id))
     else:
         return redirect(url_for('qa.qa_detail', qa_id=request.form.get('question_id')))
+
+
+@bp.route('/search')
+def search():
+    q = request.args.get('q')
+    questions = QuestionModel.query.filter(
+        QuestionModel.title.contains(q)).all()
+    return render_template('index.html', questions=questions)

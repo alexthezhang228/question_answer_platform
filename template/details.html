@@ -1,3 +1,11 @@
+<!--
+ * @Author: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
+ * @Date: 2023-02-27 21:35:48
+ * @LastEditors: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
+ * @LastEditTime: 2023-03-02 23:18:22
+ * @FilePath: /flask_project/template/details.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 {% extends 'base.html' %}
 
 {% block title%}{{question.title}}{% endblock %}
@@ -16,28 +24,29 @@
 <p class="question-content">{{question.content}}</p>
 <hr></hr>
 <h4 class="comment-group-title">
-  review(2):
+  review:{{question.answer|length}}
 </h4>
 
 
 <form action="{{url_for('qa.public_answer')}}" method="post">
   <div class="comment-group">
     <input type="text" placeholder="please leave your comment" name="content" class="form-control">
-    <input type="text" name="question_id" value="{{question.id}}">
-    <span>{{question.id}}</span>
+    <input type="hidden" name="question_id" value="{{question.id}}">
   </div>
   <div class="form-group" style="text-align: right;">
     <button class="btn btn-primary">submit</button> 
   </div>
 </form>
 <ul class="comment-group">
+  {% for answer in question.answer %}
   <li>
     <div class="user-info">
       <img class="avater" src="{{url_for('static',filename='images/avatar.jpeg')}}" >
-      <span class="user-name">alex</span>
-      <span class="create-time">1 MARCH 2023</span>
+      <span class="user-name">{{answer.author.username}}</span>
+      <span class="create-time">{{answer.create_time}}</span>
     </div>
-
+    <p class="comment-content">{{answer.content}}</p>
   </li>
+  {% endfor %}
 </ul>
 {% endblock %}
