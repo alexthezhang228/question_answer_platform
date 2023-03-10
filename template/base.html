@@ -2,7 +2,7 @@
  * @Author: alexthezhang228 zhangy32@tcd.ie
  * @Date: 2023-02-19 17:29:46
  * @LastEditors: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
- * @LastEditTime: 2023-03-02 23:28:22
+ * @LastEditTime: 2023-03-10 21:05:59
  * @FilePath: /flask_project/template/base.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -23,8 +23,8 @@
 
   <div class="navgation_bar">
     <div class="nav_left">
-      <div>logo</div>
-      <div>first page</div>
+      <div>Duck Searching</div>
+      <div><a href="{{url_for('qa.public_qa')}}">First Page</a></div>
       <div><a href="{{url_for('qa.public_qa')}}">post a question</a></div>
       <div>
         <form method="GET" action="{{url_for('qa.search')}}">

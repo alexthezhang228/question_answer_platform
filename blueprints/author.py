@@ -1,8 +1,8 @@
 '''
 Author: alexthezhang228 zhangy32@tcd.ie
 Date: 2023-02-19 12:16:37
-LastEditors: alexthezhang228 zhangy32@tcd.ie
-LastEditTime: 2023-03-01 23:47:56
+LastEditors: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
+LastEditTime: 2023-03-10 21:25:10
 FilePath: /flask_project/blueprints/author.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
@@ -23,7 +23,6 @@ def login():
         return render_template('login.html')
     else:
         form = LoginForm(request.form)
-        # print('form!')
         if form.validate():
             email = form.email.data
             password = form.password.data
